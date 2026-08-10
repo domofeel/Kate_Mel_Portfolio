@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kate Mel - product and UX designer portfolio" />
+    <title>Kate Mel | Product &amp; UX Designer Portfolio</title>
+  </head>
+  <body style="margin:0;background:#050505;color:#fff">
+    <div id="root"></div>
+    <noscript>This portfolio requires JavaScript. Run it with: npm run dev</noscript>
+    <script>
+      if (location.protocol === 'file:') {
+        location.replace('./dist/portfolio.html' + location.hash);
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,233 @@
+﻿[
+    {
+        "file":  "./weatherintegration/screen-02.jpg",
+        "name":  "750833_945226ad07fb40ada6b65a2533b26e23f000.jpg",
+        "width":  544,
+        "height":  1068,
+        "source":  "https://static.wixstatic.com/media/750833_945226ad07fb40ada6b65a2533b26e23f000.jpg/v1/fill/w_544,h_1068,al_c,q_85,enc_avif,quality_auto/750833_945226ad07fb40ada6b65a2533b26e23f000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/screen-03.jpg",
+        "name":  "750833_f2934963efac464ea682d75297a2a724f000.jpg",
+        "width":  544,
+        "height":  1068,
+        "source":  "https://static.wixstatic.com/media/750833_f2934963efac464ea682d75297a2a724f000.jpg/v1/fill/w_544,h_1068,al_c,q_85,enc_avif,quality_auto/750833_f2934963efac464ea682d75297a2a724f000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/screen-04.jpg",
+        "name":  "750833_7186b434ef864fb6ae0955907860a2b5f000.jpg",
+        "width":  544,
+        "height":  1068,
+        "source":  "https://static.wixstatic.com/media/750833_7186b434ef864fb6ae0955907860a2b5f000.jpg/v1/fill/w_544,h_1068,al_c,q_85,enc_avif,quality_auto/750833_7186b434ef864fb6ae0955907860a2b5f000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/11.png",
+        "name":  "11.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_bcb587a0556e48b2af63c44df3595f9a~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/11.png"
+    },
+    {
+        "file":  "./weatherintegration/weather-along-the-route.png",
+        "name":  "Weather along the route.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_add4217f482a4043bd787b50136e58b3~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Weather%20along%20the%20route.png"
+    },
+    {
+        "file":  "./weatherintegration/common-weather-info.png",
+        "name":  "Common weather info.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_3257ea884fae4e9fbe5286936d568d40~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Common%20weather%20info.png"
+    },
+    {
+        "file":  "./weatherintegration/user-personas.png",
+        "name":  "User personas.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_c344a2230d2c4168a437573dac52d8ca~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/User%20personas.png"
+    },
+    {
+        "file":  "./weatherintegration/12.png",
+        "name":  "12.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_586a575710a640f3be9a00e87c642794~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/12.png"
+    },
+    {
+        "file":  "./weatherintegration/cjm.png",
+        "name":  "CJM.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_956bdd907c574c8fb35e2ed778997cec~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/CJM.png"
+    },
+    {
+        "file":  "./weatherintegration/job-stories.png",
+        "name":  "Job stories.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_8832ee34fb9f4fd2bd6bec06fd8bdd50~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Job%20stories.png"
+    },
+    {
+        "file":  "./weatherintegration/hypothesis-no1.png",
+        "name":  "Hypothesis №1.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_a4a1470c90ab476a8216f9035bf7b5ca~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Hypothesis%20%E2%84%961.png"
+    },
+    {
+        "file":  "./weatherintegration/hypothesis-no2.png",
+        "name":  "Hypothesis №2.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_40fabec8e6bc4caca4183180128c525c~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Hypothesis%20%E2%84%962.png"
+    },
+    {
+        "file":  "./weatherintegration/hypothesis-no3.png",
+        "name":  "Hypothesis №3.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_34dc1416ca3e4f88bc366e98e694bbb8~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Hypothesis%20%E2%84%963.png"
+    },
+    {
+        "file":  "./weatherintegration/hypothesis-no4.png",
+        "name":  "Hypothesis №4.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_a20dfcc6f80a4487b10e70156e882a4e~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Hypothesis%20%E2%84%964.png"
+    },
+    {
+        "file":  "./weatherintegration/hypothesis-no5.png",
+        "name":  "Hypothesis №5.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_b617e408e7974303abb6550ef978264b~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Hypothesis%20%E2%84%965.png"
+    },
+    {
+        "file":  "./weatherintegration/effort-matrix.png",
+        "name":  "Effort Matrix.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_62b07fe320a84758b9693850b8a469af~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Effort%20Matrix.png"
+    },
+    {
+        "file":  "./weatherintegration/13.png",
+        "name":  "13.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_14dd3a28e585474494f5139710dfbf10~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/13.png"
+    },
+    {
+        "file":  "./weatherintegration/general-weather-data.png",
+        "name":  "General weather data.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_7ef9444957ce44fa97c62f6c2d8a3d09~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/General%20weather%20data.png"
+    },
+    {
+        "file":  "./weatherintegration/weather-data-for-drivers.png",
+        "name":  "Weather data for drivers.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_3ab9092e0d354557919c34683793f3fc~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Weather%20data%20for%20drivers.png"
+    },
+    {
+        "file":  "./weatherintegration/screen-05.jpg",
+        "name":  "750833_450e3e7c04d449e3b3a9a7ab05c75fdef000.jpg",
+        "width":  528,
+        "height":  1076,
+        "source":  "https://static.wixstatic.com/media/750833_450e3e7c04d449e3b3a9a7ab05c75fdef000.jpg/v1/fill/w_528,h_1076,al_c,q_85,enc_avif,quality_auto/750833_450e3e7c04d449e3b3a9a7ab05c75fdef000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/screen-06.jpg",
+        "name":  "750833_0a51319958e14fc5be9ce99d518f1ffdf000.jpg",
+        "width":  528,
+        "height":  1076,
+        "source":  "https://static.wixstatic.com/media/750833_0a51319958e14fc5be9ce99d518f1ffdf000.jpg/v1/fill/w_528,h_1076,al_c,q_85,enc_avif,quality_auto/750833_0a51319958e14fc5be9ce99d518f1ffdf000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/improvements.png",
+        "name":  "Improvements.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_058c2deb3fe64868a04335f2e605d83b~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Improvements.png"
+    },
+    {
+        "file":  "./weatherintegration/ui-kit.png",
+        "name":  "UI-Kit.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_5cf7355e3000421280e74e08e38d2dbd~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/UI-Kit.png"
+    },
+    {
+        "file":  "./weatherintegration/specification.png",
+        "name":  "Specification.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_2084877a8a9d4460b0f4bbab8e35e1f1~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Specification.png"
+    },
+    {
+        "file":  "./weatherintegration/screen-07.jpg",
+        "name":  "750833_31e219e300954abbb7ecf7fdb3179306f000.jpg",
+        "width":  544,
+        "height":  1068,
+        "source":  "https://static.wixstatic.com/media/750833_31e219e300954abbb7ecf7fdb3179306f000.jpg/v1/fill/w_544,h_1068,al_c,q_85,enc_avif,quality_auto/750833_31e219e300954abbb7ecf7fdb3179306f000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/screen-08.jpg",
+        "name":  "750833_1099cf9073b04abcb9cbf8f18ae1045bf000.jpg",
+        "width":  544,
+        "height":  1068,
+        "source":  "https://static.wixstatic.com/media/750833_1099cf9073b04abcb9cbf8f18ae1045bf000.jpg/v1/fill/w_544,h_1068,al_c,q_85,enc_avif,quality_auto/750833_1099cf9073b04abcb9cbf8f18ae1045bf000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/screen-09.jpg",
+        "name":  "750833_22b25c7acace4e7cbf8e53810bbf444ff000.jpg",
+        "width":  544,
+        "height":  1068,
+        "source":  "https://static.wixstatic.com/media/750833_22b25c7acace4e7cbf8e53810bbf444ff000.jpg/v1/fill/w_544,h_1068,al_c,q_85,enc_avif,quality_auto/750833_22b25c7acace4e7cbf8e53810bbf444ff000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/screen-10.jpg",
+        "name":  "750833_ab4654f2386c4d4681e9372732df0b34f000.jpg",
+        "width":  544,
+        "height":  1068,
+        "source":  "https://static.wixstatic.com/media/750833_ab4654f2386c4d4681e9372732df0b34f000.jpg/v1/fill/w_544,h_1068,al_c,q_85,enc_avif,quality_auto/750833_ab4654f2386c4d4681e9372732df0b34f000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/screen-11.jpg",
+        "name":  "750833_26a961e1bb624bc7a74830a6e090b9f1f000.jpg",
+        "width":  544,
+        "height":  1068,
+        "source":  "https://static.wixstatic.com/media/750833_26a961e1bb624bc7a74830a6e090b9f1f000.jpg/v1/fill/w_544,h_1068,al_c,q_85,enc_avif,quality_auto/750833_26a961e1bb624bc7a74830a6e090b9f1f000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/screen-12.jpg",
+        "name":  "750833_fce03487034d411dbb6873beafb5ddc0f000.jpg",
+        "width":  544,
+        "height":  1068,
+        "source":  "https://static.wixstatic.com/media/750833_fce03487034d411dbb6873beafb5ddc0f000.jpg/v1/fill/w_544,h_1068,al_c,q_85,enc_avif,quality_auto/750833_fce03487034d411dbb6873beafb5ddc0f000.jpg"
+    },
+    {
+        "file":  "./weatherintegration/screen-13.png",
+        "name":  "750833_12f571082e1d4a0bb5dfb83a78ad422b~mv2.png",
+        "width":  439,
+        "height":  870,
+        "source":  "https://static.wixstatic.com/media/750833_12f571082e1d4a0bb5dfb83a78ad422b~mv2.png/v1/fill/w_439,h_870,al_c,q_90,enc_avif,quality_auto/750833_12f571082e1d4a0bb5dfb83a78ad422b~mv2.png"
+    },
+    {
+        "file":  "./weatherintegration/route-2.png",
+        "name":  "Route_2.png",
+        "width":  439,
+        "height":  870,
+        "source":  "https://static.wixstatic.com/media/750833_156a789f514740688c265ef20710a2b9~mv2.png/v1/fill/w_439,h_870,al_c,q_90,enc_avif,quality_auto/Route_2.png"
+    },
+    {
+        "file":  "./weatherintegration/14.png",
+        "name":  "14.png",
+        "width":  1424,
+        "height":  948,
+        "source":  "https://static.wixstatic.com/media/750833_b0b6a9a15080464ca751bd5cd530145d~mv2.png/v1/fill/w_1424,h_948,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/14.png"
+    }
+]
