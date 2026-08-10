@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Info, Menu, X } from 'lucide-react';
+import { ChevronDown, Copy, Info, Menu, X } from 'lucide-react';
 import { projects } from '../data/projects';
 
 const EMAIL = 'domofeel@gmail.com';
@@ -25,16 +25,21 @@ const copyEmail = async () => {
   window.dispatchEvent(new Event(EMAIL_COPIED_EVENT));
 };
 
-const EmailCopyButton = ({ className = '' }: { className?: string }) => (
-  <button
-    type="button"
-    onClick={copyEmail}
-    className={className}
-    title="Copy email"
-    aria-label={`Copy ${EMAIL}`}
-  >
-    {EMAIL}
-  </button>
+const EmailLink = ({ className = '' }: { className?: string }) => (
+  <span className="group/email relative -my-2 -ml-2 inline-flex w-fit items-center py-2 pl-2 after:absolute after:inset-y-0 after:left-full after:w-8 after:content-['']">
+    <a href="mailto:domofeel@gmail.com" className={className}>
+      {EMAIL}
+    </a>
+    <button
+      type="button"
+      onClick={copyEmail}
+      className="pointer-events-none absolute left-full z-10 ml-0.5 inline-flex size-5 items-center justify-center text-[#A3E635] opacity-0 transition-opacity delay-200 duration-150 hover:text-[#c7f264] focus:pointer-events-auto focus:opacity-100 focus:outline-none focus:delay-0 group-hover/email:pointer-events-auto group-hover/email:opacity-100 group-hover/email:delay-0 group-focus-within/email:pointer-events-auto group-focus-within/email:opacity-100 group-focus-within/email:delay-0"
+      title="Copy email"
+      aria-label={`Copy ${EMAIL}`}
+    >
+      <Copy size={15} aria-hidden="true" />
+    </button>
+  </span>
 );
 
 const EmailCopyToast = () => {
@@ -72,7 +77,7 @@ const EmailCopyToast = () => {
           aria-live="polite"
           className="fixed bottom-[30px] right-[30px] z-[100] flex min-h-[58px] w-[min(310px,calc(100vw-60px))] items-center gap-3 rounded-[14px] border border-white/15 bg-[#24252c] px-5 py-3 text-[16px] font-medium text-white shadow-2xl"
         >
-          <Info size={22} className="shrink-0 text-[#60a5fa]" aria-hidden="true" />
+          <Info size={22} className="shrink-0 text-[#A3E635]" aria-hidden="true" />
           <span className="flex-1">Email is copied</span>
           <button
             type="button"
@@ -145,7 +150,7 @@ export const Navbar = () => {
               >
                 <Link 
                   to="/"
-                  className={`transition-colors cursor-pointer flex items-center gap-1 group/btn ${isPortfolioOpen ? 'text-brand-muted' : (isPortfolioActive ? 'text-[#A3E635]' : 'hover:text-brand-accent')}`}
+                  className={`cursor-pointer flex items-center gap-1 border-b border-transparent transition-colors hover:border-brand-accent group/btn ${isPortfolioOpen ? 'text-brand-muted' : (isPortfolioActive ? 'text-[#A3E635]' : 'hover:text-brand-accent')}`}
                 >
                   Portfolio
                   <ChevronDown size={16} className={`transition-transform duration-300 ${isPortfolioOpen ? 'rotate-180' : ''}`} />
@@ -177,16 +182,19 @@ export const Navbar = () => {
 
               <Link 
                 to="/about" 
-                className={`transition-colors ${isAboutActive ? 'text-[#A3E635]' : 'hover:text-brand-accent'}`}
+                className={`border-b border-transparent transition-colors hover:border-brand-accent ${isAboutActive ? 'text-[#A3E635]' : 'hover:text-brand-accent'}`}
               >
                 About me
               </Link>
             </div>
           </div>
 
-          <div className="hidden lg:flex items-center gap-7 text-base pointer-events-auto shrink-0">
-            <EmailCopyButton className="cursor-pointer transition-colors hover:text-brand-accent" />
-            <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-accent">
+          <div
+            className="hidden lg:flex items-center text-base pointer-events-auto shrink-0"
+            style={{ gap: "var(--header-contact-gap, 28px)" }}
+          >
+            <EmailLink className="cursor-pointer border-b border-transparent transition-colors hover:border-brand-accent hover:text-brand-accent" />
+            <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="border-b border-transparent transition-colors hover:border-brand-accent hover:text-brand-accent">
               Telegram
             </a>
             <a
@@ -194,7 +202,7 @@ export const Navbar = () => {
               download="CV_Ekaterina_Melnikova.pdf"
               className="min-w-[116px] px-6 py-2.5 bg-transparent border border-[#A3E635] text-[#A3E635] font-bold flex items-center justify-center gap-2 hover:bg-[#A3E635]/10 hover:scale-105 transition-all cursor-pointer uppercase group/cv"
               style={{
-                borderRadius: "var(--case-button-radius, 0px)",
+                borderRadius: "var(--header-cv-radius, 8px)",
                 fontSize: "var(--case-button-font-size, 12px)",
                 lineHeight: "var(--case-button-line-height, 1.2)",
                 letterSpacing: "var(--case-button-letter-spacing, 0.18em)",
@@ -253,7 +261,7 @@ export const Navbar = () => {
 
             <div className="mt-auto pt-12 flex flex-col gap-6 border-t border-white/10">
               <div className="flex flex-col gap-4 text-brand-muted text-lg">
-                <EmailCopyButton className="w-fit cursor-pointer text-left text-white transition-colors hover:text-brand-accent" />
+                <EmailLink className="w-fit cursor-pointer text-left text-white transition-colors hover:text-brand-accent" />
                 <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="w-fit text-white transition-colors hover:text-brand-accent">
                   Telegram
                 </a>
@@ -285,7 +293,7 @@ export const Footer = () => {
     <footer className="flex flex-col items-center border-t border-white/5 bg-[#181818] px-[clamp(24px,6.25vw,128px)] py-20">
       <h2 className="title-text text-center mb-12">Let's connect.</h2>
       <div className="flex gap-12 text-lg">
-        <EmailCopyButton className="cursor-pointer border-b border-transparent transition-colors hover:border-brand-accent hover:text-brand-accent" />
+        <EmailLink className="cursor-pointer border-b border-transparent transition-colors hover:border-brand-accent hover:text-brand-accent" />
         <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors border-b border-transparent hover:border-brand-accent">Telegram</a>
         <a href="./CV_Ekaterina_Melnikova.pdf" download="CV_Ekaterina_Melnikova.pdf" className="hover:text-brand-accent transition-colors border-b border-transparent hover:border-brand-accent">CV</a>
       </div>

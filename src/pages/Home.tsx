@@ -7,7 +7,7 @@ export default function Home() {
     "w-full h-full object-cover block transition-transform duration-[1500ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.08]";
 
   return (
-    <main className="mx-auto max-w-[2048px] bg-[#181818] px-[clamp(24px,6.25vw,128px)] pt-[clamp(120px,9vw,180px)]">
+    <main data-typography="prose" className="mx-auto max-w-[2048px] bg-[#181818] px-[clamp(24px,6.25vw,128px)] pt-[clamp(120px,9vw,180px)]">
       <header className="mb-[clamp(88px,8vw,160px)]">
         <motion.div
            initial={{ opacity: 0, y: 20 }}

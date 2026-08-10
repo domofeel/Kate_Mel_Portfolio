@@ -1,6 +1,7 @@
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Navbar, Footer } from './components/Layout';
+import NonBreakingProse from './components/NonBreakingProse';
 import Home from './pages/Home';
 import About from './pages/About';
 import CaseStudy from './pages/CaseStudy';
@@ -17,6 +18,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <NonBreakingProse />
       <div className="min-h-screen bg-[#181818] selection:bg-brand-accent selection:text-white">
         <Navbar />
         <Routes>

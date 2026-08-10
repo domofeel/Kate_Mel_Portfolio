@@ -10,7 +10,7 @@ const experience = [
 
 export default function About() {
   return (
-    <main className="w-full bg-[#181818]">
+    <main data-typography="prose" className="w-full bg-[#181818]">
       <div className="mx-auto w-full max-w-[1280px] px-[clamp(24px,6.25vw,80px)] pb-[clamp(104px,11vw,144px)] pt-[clamp(150px,15vw,192px)]">
       <motion.section
         initial={{ opacity: 0, y: 20 }}

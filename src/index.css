@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+:root {
+  /* Global values from the published Design controls snapshot. */
+  --case-button-radius: 12px;
+  --case-button-font-size: 13px;
+  --case-button-line-height: 1.2;
+  --case-button-letter-spacing: 0.12em;
+  --header-contact-gap: 48px;
+
+  /* Independent current style of the desktop CV button. */
+  --header-cv-radius: 8px;
+}
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;

@@ -6,7 +6,8 @@ import { ArrowLeft, Check, RotateCcw, Save, SlidersHorizontal, X } from 'lucide-
 import { weatherIntegrationCase, CaseSection, CaseMedia } from '../data/weatherIntegrationCase';
 import { notificationsCase } from '../data/notificationsCase';
 
-// Set to true to restore the Design controls button and panel.
+// The published site uses the exact Chrome snapshot in defaultDesignSettings.
+// Set to true to restore the Design controls button, panel and localStorage editing.
 const SHOW_DESIGN_CONTROLS = false;
 import { wallTabletCase } from '../data/wallTabletCase';
 import { smartScenariosCase } from '../data/smartScenariosCase';
@@ -31,7 +32,7 @@ type DesignSettings = {
   headerBottom: number;
   introBottom: number;
   sectionGap: number;
-  stageTop: number;
+  stageBlockGap: number;
   titleBottom: number;
   paragraphGap: number;
   textToList: number;
@@ -49,54 +50,62 @@ type DesignSettings = {
   buttonPaddingX: number;
   buttonPaddingY: number;
   buttonRadius: number;
+  headerContactGap: number;
   nextCaseTitle: number;
   nextCaseLine: number;
   nextCaseLetterSpacing: number;
 };
 
-const DESIGN_STORAGE_KEY = "kate-case-design-settings-v3";
-const LEGACY_DESIGN_STORAGE_KEY = "kate-case-design-settings-v2";
+const DESIGN_STORAGE_KEY = "kate-case-design-settings-v5";
+const LEGACY_DESIGN_STORAGE_KEY = "kate-case-design-settings-v4";
+const OLDER_DESIGN_STORAGE_KEYS = [
+  "kate-case-design-settings-v3",
+  "kate-case-design-settings-v2",
+  "kate-case-design-settings-v1",
+  "kate-case-design-settings",
+];
 
 const defaultDesignSettings: DesignSettings = {
   heroTitle: 64,
-  heroLine: 1.1,
-  subtitle: 28,
-  subtitleLine: 1.3,
+  heroLine: 1.2,
+  subtitle: 24,
+  subtitleLine: 1.45,
   stageTitle: 80,
   stageLine: 1,
-  sectionTitle: 38,
-  sectionLine: 1.16,
+  sectionTitle: 26,
+  sectionLine: 1,
   body: 18,
-  bodyLine: 1.65,
+  bodyLine: 1.55,
   heroTitleBottom: 16,
   stageTitleBottom: 28,
   textWidth: 768,
   mediaWidth: 1280,
   phoneMediaWidth: 540,
-  pageTop: 128,
+  pageTop: 154,
   headerBottom: 48,
-  introBottom: 128,
-  sectionGap: 160,
-  stageTop: 112,
-  titleBottom: 20,
-  paragraphGap: 24,
-  textToList: 24,
-  listGap: 16,
+  introBottom: 122,
+  sectionGap: 64,
+  stageBlockGap: 182,
+  titleBottom: 16,
+  paragraphGap: 12,
+  textToList: 18,
+  listGap: 8,
   listNumberGap: 2,
   listNumberTopOffset: 0,
-  mediaTop: 56,
-  mediaBottomGap: 132,
-  mediaGap: 32,
-  phoneMediaGap: 56,
+  mediaTop: 52,
+  mediaBottomGap: 145,
+  mediaGap: 44,
+  phoneMediaGap: 44,
   buttonTopGap: 32,
-  buttonFont: 12,
+  buttonFont: 13,
   buttonLine: 1.2,
-  buttonLetterSpacing: 0.18,
+  buttonLetterSpacing: 0.12,
   buttonPaddingX: 28,
-  buttonPaddingY: 13,
-  buttonRadius: 0,
-  nextCaseTitle: 64,
-  nextCaseLine: 1.08,
+  buttonPaddingY: 20,
+  buttonRadius: 12,
+  headerContactGap: 48,
+  nextCaseTitle: 56,
+  nextCaseLine: 1.28,
   nextCaseLetterSpacing: -0.03,
 };
 
@@ -115,7 +124,7 @@ const designPresets: Record<string, DesignSettings> = {
     pageTop: 112,
     introBottom: 96,
     sectionGap: 112,
-    stageTop: 88,
+    stageBlockGap: 88,
     titleBottom: 16,
     paragraphGap: 18,
     textToList: 18,
@@ -148,7 +157,7 @@ const designPresets: Record<string, DesignSettings> = {
     pageTop: 152,
     introBottom: 168,
     sectionGap: 208,
-    stageTop: 144,
+    stageBlockGap: 144,
     titleBottom: 28,
     paragraphGap: 30,
     textToList: 32,
@@ -171,15 +180,36 @@ const readStoredDesignSettings = () => {
   if (typeof window === "undefined") return defaultDesignSettings;
 
   try {
-    const currentStored = window.localStorage.getItem(DESIGN_STORAGE_KEY);
-    const legacyStored = window.localStorage.getItem(LEGACY_DESIGN_STORAGE_KEY);
-    const stored = currentStored || legacyStored;
-    if (!stored) return defaultDesignSettings;
-    const parsed = JSON.parse(stored) as Partial<DesignSettings>;
+    const candidates = [DESIGN_STORAGE_KEY, LEGACY_DESIGN_STORAGE_KEY, ...OLDER_DESIGN_STORAGE_KEYS]
+      .flatMap((key) => {
+        const stored = window.localStorage.getItem(key);
+        if (!stored) return [];
+
+        try {
+          return [{
+            key,
+            parsed: JSON.parse(stored) as Partial<DesignSettings> & { stageTop?: number },
+          }];
+        } catch {
+          return [];
+        }
+      });
+
+    if (!candidates.length) return defaultDesignSettings;
+
+    // Prefer a genuinely customized rounded-button preset. Flat legacy defaults
+    // must not mask the restored source defaults.
+    const customized = candidates.find(({ parsed }) => (parsed.buttonRadius ?? 0) > 0);
+    if (!customized) return defaultDesignSettings;
+
+    const selected = customized;
+    const { key: selectedKey, parsed } = selected;
+
     return {
       ...defaultDesignSettings,
       ...parsed,
-      listNumberGap: currentStored ? parsed.listNumberGap ?? 2 : 2,
+      stageBlockGap: parsed.stageBlockGap ?? parsed.stageTop ?? defaultDesignSettings.stageBlockGap,
+      listNumberGap: selectedKey === DESIGN_STORAGE_KEY ? parsed.listNumberGap ?? 2 : 2,
       buttonRadius: parsed.buttonRadius && parsed.buttonRadius > 64 ? 0 : parsed.buttonRadius ?? defaultDesignSettings.buttonRadius,
     } as DesignSettings;
   } catch {
@@ -254,7 +284,7 @@ const DesignControls = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-5 right-5 z-[80] print:hidden">
+    <div data-typography-ignore className="fixed bottom-5 right-5 z-[80] print:hidden">
       {!open ? (
         <button
           type="button"
@@ -317,7 +347,6 @@ const DesignControls = ({
               <RangeControl label="Section H2 → text/list" value={settings.titleBottom} min={8} max={64} onChange={(titleBottom) => onChange({ titleBottom })} />
               <RangeControl label="Stage H2 size" value={settings.stageTitle} min={40} max={112} onChange={(stageTitle) => onChange({ stageTitle })} />
               <RangeControl label="Stage H2 line-height" value={settings.stageLine} min={0.9} max={1.35} step={0.01} suffix="" onChange={(stageLine) => onChange({ stageLine })} />
-              <RangeControl label="Previous block → Stage H2" value={settings.stageTop} min={0} max={180} onChange={(stageTop) => onChange({ stageTop })} />
               <RangeControl label="Stage H2 → text" value={settings.stageTitleBottom} min={8} max={80} onChange={(stageTitleBottom) => onChange({ stageTitleBottom })} />
             </ControlGroup>
 
@@ -344,6 +373,7 @@ const DesignControls = ({
               <RangeControl label="Header → intro media" value={settings.headerBottom} min={24} max={96} onChange={(headerBottom) => onChange({ headerBottom })} />
               <RangeControl label="Intro media → content" value={settings.introBottom} min={48} max={220} onChange={(introBottom) => onChange({ introBottom })} />
               <RangeControl label="Between sections" value={settings.sectionGap} min={24} max={240} onChange={(sectionGap) => onChange({ sectionGap })} />
+              <RangeControl label="Previous block → new stage" value={settings.stageBlockGap} min={0} max={320} onChange={(stageBlockGap) => onChange({ stageBlockGap })} />
             </ControlGroup>
 
             <ControlGroup title="Media spacing">
@@ -361,6 +391,10 @@ const DesignControls = ({
               <RangeControl label="Button padding X" value={settings.buttonPaddingX} min={16} max={56} onChange={(buttonPaddingX) => onChange({ buttonPaddingX })} />
               <RangeControl label="Button padding Y" value={settings.buttonPaddingY} min={8} max={26} onChange={(buttonPaddingY) => onChange({ buttonPaddingY })} />
               <RangeControl label="Button radius" value={settings.buttonRadius} min={0} max={64} onChange={(buttonRadius) => onChange({ buttonRadius })} />
+            </ControlGroup>
+
+            <ControlGroup title="Header">
+              <RangeControl label="Contact items horizontal gap" value={settings.headerContactGap} min={24} max={96} onChange={(headerContactGap) => onChange({ headerContactGap })} />
             </ControlGroup>
 
             <ControlGroup title="Next case study">
@@ -564,7 +598,7 @@ const SectionButtons = ({ section, settings }: { section: CaseSection; settings:
 };
 
 const DetailedSection = ({ section, settings }: { section: CaseSection; settings: DesignSettings }) => (
-  <section style={section.stage ? { paddingTop: settings.stageTop } : undefined}>
+  <section>
     <div className="px-6 mx-auto" style={{ maxWidth: settings.textWidth }}>
       {section.showTitle !== false && (
         <h2
@@ -644,7 +678,9 @@ const DetailedSection = ({ section, settings }: { section: CaseSection; settings
 );
 
 export default function CaseStudy() {
-  const [designSettings, setDesignSettings] = useState<DesignSettings>(readStoredDesignSettings);
+  const [designSettings, setDesignSettings] = useState<DesignSettings>(() =>
+    SHOW_DESIGN_CONTROLS ? readStoredDesignSettings() : defaultDesignSettings
+  );
   const [savedAt, setSavedAt] = useState<Date | null>(null);
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
@@ -655,7 +691,7 @@ export default function CaseStudy() {
   };
 
   useEffect(() => {
-    saveDesignSettings(designSettings);
+    if (SHOW_DESIGN_CONTROLS) saveDesignSettings(designSettings);
   }, [designSettings]);
 
   useEffect(() => {
@@ -663,7 +699,8 @@ export default function CaseStudy() {
     document.documentElement.style.setProperty("--case-button-font-size", `${designSettings.buttonFont}px`);
     document.documentElement.style.setProperty("--case-button-line-height", `${designSettings.buttonLine}`);
     document.documentElement.style.setProperty("--case-button-letter-spacing", `${designSettings.buttonLetterSpacing}em`);
-  }, [designSettings.buttonRadius, designSettings.buttonFont, designSettings.buttonLine, designSettings.buttonLetterSpacing]);
+    document.documentElement.style.setProperty("--header-contact-gap", `${designSettings.headerContactGap}px`);
+  }, [designSettings.buttonRadius, designSettings.buttonFont, designSettings.buttonLine, designSettings.buttonLetterSpacing, designSettings.headerContactGap]);
 
   const updateDesignSettings = (next: Partial<DesignSettings>) => {
     setDesignSettings((current) => ({ ...current, ...next }));
@@ -697,7 +734,7 @@ export default function CaseStudy() {
   const titleLines = detailedCase?.titleLines;
 
   return (
-    <main className="text-brand-text bg-[#181818] min-h-screen" style={pageStyle}>
+    <main data-typography="prose" className="text-brand-text bg-[#181818] min-h-screen" style={pageStyle}>
       {SHOW_DESIGN_CONTROLS && detailedCase && (
         <DesignControls
           settings={designSettings}
@@ -803,11 +840,14 @@ export default function CaseStudy() {
         <div>
           {detailedCase.sections.map((section, index) => {
             const isLastSection = index === detailedCase.sections.length - 1;
+            const nextSection = detailedCase.sections[index + 1];
             const nextGap = isLastSection
               ? 0
-              : section.images?.length
-                ? designSettings.mediaBottomGap
-                : designSettings.sectionGap;
+              : nextSection?.stage
+                ? designSettings.stageBlockGap
+                : section.images?.length
+                  ? designSettings.mediaBottomGap
+                  : designSettings.sectionGap;
 
             return (
             <div key={section.title} style={{ marginBottom: nextGap }}>
