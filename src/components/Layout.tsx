@@ -150,7 +150,7 @@ export const Navbar = () => {
               >
                 <Link 
                   to="/"
-                  className={`cursor-pointer flex items-center gap-1 border-b border-transparent transition-colors hover:border-brand-accent group/btn ${isPortfolioOpen ? 'text-brand-muted' : (isPortfolioActive ? 'text-[#A3E635]' : 'hover:text-brand-accent')}`}
+                  className={`cursor-pointer flex items-center gap-1 transition-colors group/btn ${isPortfolioOpen ? 'text-brand-muted' : (isPortfolioActive ? 'text-[#A3E635]' : 'hover:text-brand-accent')}`}
                 >
                   Portfolio
                   <ChevronDown size={16} className={`transition-transform duration-300 ${isPortfolioOpen ? 'rotate-180' : ''}`} />
@@ -182,7 +182,7 @@ export const Navbar = () => {
 
               <Link 
                 to="/about" 
-                className={`border-b border-transparent transition-colors hover:border-brand-accent ${isAboutActive ? 'text-[#A3E635]' : 'hover:text-brand-accent'}`}
+                className={`transition-colors ${isAboutActive ? 'text-[#A3E635]' : 'hover:text-brand-accent'}`}
               >
                 About me
               </Link>
@@ -193,14 +193,17 @@ export const Navbar = () => {
             className="hidden lg:flex items-center text-base pointer-events-auto shrink-0"
             style={{ gap: "var(--header-contact-gap, 28px)" }}
           >
-            <EmailLink className="cursor-pointer border-b border-transparent transition-colors hover:border-brand-accent hover:text-brand-accent" />
-            <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="border-b border-transparent transition-colors hover:border-brand-accent hover:text-brand-accent">
+            <EmailLink className="cursor-pointer transition-colors hover:text-brand-accent" />
+            <a href="https://www.linkedin.com/in/kate-mel-71645a23a/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-accent">
+              LinkedIn
+            </a>
+            <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-accent">
               Telegram
             </a>
             <a
               href="./CV_Ekaterina_Melnikova.pdf"
               download="CV_Ekaterina_Melnikova.pdf"
-              className="min-w-[116px] px-6 py-2.5 bg-transparent border border-[#A3E635] text-[#A3E635] font-bold flex items-center justify-center gap-2 hover:bg-[#A3E635]/10 hover:scale-105 transition-all cursor-pointer uppercase group/cv"
+              className="min-w-[116px] px-6 py-2.5 bg-transparent border border-[#A3E635] text-[#A3E635] font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all cursor-pointer uppercase group/cv"
               style={{
                 borderRadius: "var(--header-cv-radius, 8px)",
                 fontSize: "var(--case-button-font-size, 12px)",
@@ -262,6 +265,9 @@ export const Navbar = () => {
             <div className="mt-auto pt-12 flex flex-col gap-6 border-t border-white/10">
               <div className="flex flex-col gap-4 text-brand-muted text-lg">
                 <EmailLink className="w-fit cursor-pointer text-left text-white transition-colors hover:text-brand-accent" />
+                <a href="https://www.linkedin.com/in/kate-mel-71645a23a/" target="_blank" rel="noopener noreferrer" className="w-fit text-white transition-colors hover:text-brand-accent">
+                  LinkedIn
+                </a>
                 <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="w-fit text-white transition-colors hover:text-brand-accent">
                   Telegram
                 </a>
@@ -269,7 +275,7 @@ export const Navbar = () => {
               <a
                 href="./CV_Ekaterina_Melnikova.pdf"
                 download="CV_Ekaterina_Melnikova.pdf"
-                className="px-6 py-4 bg-transparent border border-[#A3E635] text-[#A3E635] font-bold flex items-center justify-center gap-2 hover:bg-[#A3E635]/10 hover:scale-105 transition-all uppercase mt-4 w-full"
+                className="px-6 py-4 bg-transparent border border-[#A3E635] text-[#A3E635] font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all uppercase mt-4 w-full"
                 style={{
                   borderRadius: "var(--case-button-radius, 0px)",
                   fontSize: "var(--case-button-font-size, 12px)",
@@ -293,9 +299,10 @@ export const Footer = () => {
     <footer className="flex flex-col items-center border-t border-white/5 bg-[#181818] px-[clamp(24px,6.25vw,128px)] py-20">
       <h2 className="title-text text-center mb-12">Let's connect.</h2>
       <div className="flex gap-12 text-lg">
-        <EmailLink className="cursor-pointer border-b border-transparent transition-colors hover:border-brand-accent hover:text-brand-accent" />
-        <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors border-b border-transparent hover:border-brand-accent">Telegram</a>
-        <a href="./CV_Ekaterina_Melnikova.pdf" download="CV_Ekaterina_Melnikova.pdf" className="hover:text-brand-accent transition-colors border-b border-transparent hover:border-brand-accent">CV</a>
+        <EmailLink className="cursor-pointer transition-colors hover:text-brand-accent" />
+        <a href="https://www.linkedin.com/in/kate-mel-71645a23a/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors">LinkedIn</a>
+        <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors">Telegram</a>
+        <a href="./CV_Ekaterina_Melnikova.pdf" download="CV_Ekaterina_Melnikova.pdf" className="hover:text-brand-accent transition-colors">CV</a>
       </div>
       <p className="mt-20 text-brand-muted text-sm">© 2026 Kate Mel</p>
     </footer>

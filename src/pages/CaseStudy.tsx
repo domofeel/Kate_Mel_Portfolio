@@ -103,7 +103,7 @@ const defaultDesignSettings: DesignSettings = {
   buttonPaddingX: 28,
   buttonPaddingY: 20,
   buttonRadius: 12,
-  headerContactGap: 48,
+  headerContactGap: 44,
   nextCaseTitle: 56,
   nextCaseLine: 1.28,
   nextCaseLetterSpacing: -0.03,
@@ -581,10 +581,11 @@ const SectionButtons = ({ section, settings }: { section: CaseSection; settings:
           href={button.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-full items-center justify-center gap-2 border border-[#A3E635] bg-transparent font-bold uppercase text-[#A3E635] transition-all hover:scale-[1.01] hover:bg-[#A3E635]/10"
+          className="inline-flex w-full items-center justify-center gap-2 border border-[#A3E635] bg-transparent font-bold uppercase text-[#A3E635] transition-all hover:scale-[1.01]"
           style={{
+            height: 58,
             borderRadius: settings.buttonRadius,
-            fontSize: settings.buttonFont,
+            fontSize: 12,
             lineHeight: settings.buttonLine,
             letterSpacing: `${settings.buttonLetterSpacing}em`,
             padding: `${settings.buttonPaddingY}px ${settings.buttonPaddingX}px`,

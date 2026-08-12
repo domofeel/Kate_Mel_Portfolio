@@ -18,8 +18,10 @@ export default function Home() {
             Product <br />
             designer
           </h1>
-          <p className="max-w-3xl text-xl md:text-2xl text-[#a3a3a3] font-light leading-[1.5]">
-            Product designer with 5+ years of experience designing B2B SaaS and B2C apps for companies including Gazprombank and Sber. Turn user research into data-driven solutions, focusing on user-centered design.
+          <p className="max-w-[53rem] text-xl md:text-2xl text-[#a3a3a3] font-light leading-[1.5]">
+            Product designer with 5+ years of experience designing B2B SaaS<span className="hidden lg:inline"><br /></span>{' '}
+            and B2C apps for companies including Gazprombank and Sber. Turn<span className="hidden lg:inline"><br /></span>{' '}
+            user research into data-driven solutions, focusing on user-centered design.
           </p>
         </motion.div>
       </header>
