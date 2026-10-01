@@ -212,13 +212,11 @@ def add_product_experience(doc):
 
 def add_ux_ui_experience(doc):
     add_section(doc, "Experience")
-    add_role(doc, "Senior Product Designer", "Zhelezno", "Jul 2024 - Present", [
+    add_role(doc, "UX/UI Designer", "Zhelezno", "Jan 2022 - Now", [
         "Designed complex B2B dashboards and internal tools, turning dense workflows into clear, scalable interfaces.",
         "Built and maintained web and mobile design-system components, UX patterns and developer documentation, increasing development speed by 50%.",
         "Worked with Product and Engineering from interaction concepts and prototypes through handoff and QA, reducing feature rework by 23%.",
         "Mentored a junior designer and improved feature delivery time by 14%.",
-    ])
-    add_role(doc, "Middle+ Product Designer", "Zhelezno", "Jan 2022 - Jul 2024", [
         "Redesigned B2B admin dashboards and navigation, increasing daily user adoption by 40%.",
         "Used interviews, surveys and usability testing to refine flows and UI, increasing B2B retention by 42% within 13 months.",
         "Designed an employee mobile app used daily by 65% of staff, accelerating task completion by 27%.",
@@ -264,18 +262,12 @@ def build_ux_ui_resume():
     doc = Document()
     configure_document(doc)
     add_header(doc, "UX/UI Designer", "https://kate-mel-portfolio-ux-ui.vercel.app/")
+    add_ux_ui_experience(doc)
     add_section(
         doc,
-        "Profile",
-        "UX/UI Designer creating clear, intuitive interfaces for web and mobile products. I combine research, information architecture, interaction design, prototyping and design systems to simplify complex products. I am currently developing a specialization in game UX/UI.",
+        "Skills",
+        "UX Design, UI Design, Interaction Design, Information Architecture, User Flows, Wireframing, Interactive Prototyping, User Research, User Interviews, Usability Testing, Responsive Design, Accessibility, Design Systems, Component Libraries, Design Tokens, Developer Handoff, Figma, FigJam, ProtoPie, Adobe Photoshop, Adobe Illustrator, ChatGPT, Claude, Codex.",
     )
-    add_section(doc, "Core Skills")
-    add_skills(doc, [
-        ("UX", "user interviews, surveys, usability testing, heuristic analysis, information architecture, user flows, wireframes"),
-        ("UI and interaction", "visual hierarchy, interaction design, responsive web and mobile UI, polished mockups, interactive prototypes"),
-        ("Systems and delivery", "design systems, component libraries, design tokens, Figma, developer handoff, documentation, QA"),
-    ])
-    add_ux_ui_experience(doc)
     add_education(doc)
     path = OUTPUT / "Ekaterina_Melnikova_UXUI_Designer.docx"
     doc.save(path)
