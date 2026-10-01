@@ -199,7 +199,7 @@ def apply_document_font(doc, font_name):
         fonts.set(qn("w:hAnsi"), font_name)
 
 
-def improve_ux_ui_readability(doc):
+def improve_resume_readability(doc):
     normal = doc.styles["Normal"]
     normal.font.size = Pt(10.4)
     normal.paragraph_format.space_after = Pt(3)
@@ -244,13 +244,11 @@ def improve_ux_ui_readability(doc):
 
 def add_product_experience(doc):
     add_section(doc, "Experience")
-    add_role(doc, "Senior Product Designer", "Zhelezno", "Jul 2024 - Present", [
+    add_role(doc, "Product Designer", "Zhelezno", "Jan 2022 - Now", [
         "Led end-to-end product design for B2B dashboards and internal tools, shaping complex workflows into scalable product solutions.",
         "Built and maintained a web and mobile design system, UX patterns and developer documentation, increasing development speed by 50%.",
         "Partnered with Product and Engineering, reducing feature rework by 23% and improving roadmap alignment.",
         "Mentored a junior designer and improved feature delivery time by 14%.",
-    ])
-    add_role(doc, "Middle+ Product Designer", "Zhelezno", "Jan 2022 - Jul 2024", [
         "Redesigned complex B2B admin dashboards, increasing daily user adoption by 40%.",
         "Conducted user interviews, surveys and usability testing, increasing B2B retention by 42% within 13 months.",
         "Shipped an employee mobile app used daily by 65% of staff, accelerating task completion by 27%.",
@@ -300,19 +298,15 @@ def build_product_resume():
     doc = Document()
     configure_document(doc)
     add_header(doc, "Product Designer", "https://kate-mel-portfolio-product.vercel.app/")
-    add_section(
-        doc,
-        "Profile",
-        "Product Designer focused on B2B SaaS, complex admin tools and mobile products. I connect user research, usability testing and product data with clear workflows and scalable interface solutions, taking features from discovery through design, delivery and iteration.",
-    )
-    add_section(doc, "Core Skills")
-    add_skills(doc, [
-        ("Product", "discovery-to-delivery, product strategy, prioritization, metrics and KPIs, roadmap alignment"),
-        ("Research and UX", "user interviews, surveys, usability testing, insight synthesis, information architecture, complex workflows"),
-        ("Design and delivery", "user flows, wireframes, prototyping, mobile UI, design systems, Figma, developer handoff, documentation"),
-    ])
     add_product_experience(doc)
     add_education(doc)
+    add_section(
+        doc,
+        "Skills",
+        "Product Design, User Research, User Interviews, Usability Testing, Information Architecture, Interaction Design, User Flows, Wireframing, Prototyping, UI Design, Design Systems, Product Metrics, A/B Testing, Feature Prioritization, Developer Handoff, Stakeholder Alignment, Figma, FigJam, ProtoPie, Adobe Photoshop, Adobe Illustrator, ChatGPT, Claude, Codex.",
+    )
+    apply_document_font(doc, "Arial")
+    improve_resume_readability(doc)
     path = OUTPUT / "Ekaterina_Melnikova_Product_Designer.docx"
     doc.save(path)
     return path
@@ -330,7 +324,7 @@ def build_ux_ui_resume():
         "UX Design, UI Design, Interaction Design, Information Architecture, User Flows, Wireframing, Interactive Prototyping, User Research, User Interviews, Usability Testing, Responsive Design, Accessibility, Design Systems, Component Libraries, Design Tokens, Developer Handoff, Figma, FigJam, ProtoPie, Adobe Photoshop, Adobe Illustrator, ChatGPT, Claude, Codex.",
     )
     apply_document_font(doc, "Arial")
-    improve_ux_ui_readability(doc)
+    improve_resume_readability(doc)
     path = OUTPUT / "Ekaterina_Melnikova_UXUI_Designer.docx"
     doc.save(path)
     return path
