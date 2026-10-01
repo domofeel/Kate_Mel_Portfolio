@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { portfolioContent, portfolioVariant } from '../config/portfolio';
+import { portfolioContent } from '../config/portfolio';
 import { projects } from '../data/projects';
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.8 }}
         >
-          <h1 className={`text-[min(6rem,21vw)] md:text-[9rem] lg:text-[12rem] xl:text-[13rem] font-sans font-normal tracking-[-0.04em] text-white mb-[60px] ${portfolioVariant === 'ux-ui' ? 'leading-[1.1]' : 'leading-[0.9]'}`}>
+          <h1 className="text-[min(6rem,21vw)] md:text-[9rem] lg:text-[12rem] xl:text-[13rem] leading-[1em] font-sans font-normal tracking-[-0.04em] text-white mb-[60px]">
             {portfolioContent.homeTitle[0]} <br />
             {portfolioContent.homeTitle[1]}
           </h1>
