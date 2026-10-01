@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { portfolioContent } from '../config/portfolio';
 import { projects } from '../data/projects';
 
 export default function Home() {
@@ -14,14 +15,12 @@ export default function Home() {
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.8 }}
         >
-          <h1 className="text-[6rem] md:text-[9rem] lg:text-[12rem] xl:text-[13rem] leading-[0.9] font-sans font-normal tracking-[-0.04em] text-white mb-[60px]">
-            Product <br />
-            designer
+          <h1 className="text-[min(6rem,21vw)] md:text-[9rem] lg:text-[12rem] xl:text-[13rem] leading-[0.9] font-sans font-normal tracking-[-0.04em] text-white mb-[60px]">
+            {portfolioContent.homeTitle[0]} <br />
+            {portfolioContent.homeTitle[1]}
           </h1>
           <p className="max-w-[53rem] text-xl md:text-2xl text-[#a3a3a3] font-light leading-[1.5]">
-            Product / UX/UI designer focused on B2B SaaS, complex admin tools<span className="hidden lg:inline"><br /></span>{' '}
-            and mobile products. I use research, usability testing and design systems<span className="hidden lg:inline"><br /></span>{' '}
-            to make demanding workflows clear, and I am developing a specialization in game UX/UI.
+            {portfolioContent.homeDescription}
           </p>
         </motion.div>
       </header>

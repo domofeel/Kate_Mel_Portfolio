@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { portfolioContent } from '../config/portfolio';
 
 const experience = [
   { period: 'Jul 2024 - Present', company: 'Zhelezno', role: 'Senior Product Designer', focus: 'B2B SaaS • Admin tools • Design systems' },
@@ -21,18 +22,12 @@ export default function About() {
       >
         <div>
           <h1 className="text-[36px] font-normal leading-[1.15] tracking-[-0.035em] text-white">Kate Mel</h1>
-          <p className="mt-1 text-[20px] font-light italic leading-[1.35] text-white/65">Product / UX/UI Designer</p>
+          <p className="mt-1 text-[20px] font-light italic leading-[1.35] text-white/65">{portfolioContent.specialty}</p>
 
           <div className="mt-5 space-y-6 text-[20px] font-light leading-[1.55] text-white/80">
-            <p>
-              I&apos;m a Product / UX/UI Designer based in Novi Sad, Serbia, with a residence permit and the right
-              to work. I design B2B SaaS, admin tools and mobile products for banking, marketplace and smart-home services.
-            </p>
-            <p>
-              I work from research and UX structure through interface design, prototyping, testing and developer handoff.
-              My practice includes design systems, user interviews, usability testing, customer journey maps and service
-              blueprints. I am expanding this product design background into game UX/UI, with a focus on mobile and casual experiences.
-            </p>
+            {portfolioContent.about.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </div>
 
