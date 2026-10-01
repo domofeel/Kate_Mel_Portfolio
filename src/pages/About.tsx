@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
-import { portfolioContent } from '../config/portfolio';
+import { portfolioContent, portfolioVariant } from '../config/portfolio';
 
-const experience = [
+const productExperience = [
   { period: 'Jul 2024 - Present', company: 'Zhelezno', role: 'Senior Product Designer', focus: 'B2B SaaS • Admin tools • Design systems' },
   { period: 'Jan 2022 - Jul 2024', company: 'Zhelezno', role: 'Middle+ Product Designer', focus: 'Research • Complex workflows • Mobile products' },
   { period: 'Aug 2021 - Dec 2021', company: 'ServiceHub', role: 'UX/UI Designer', focus: 'Fintech SaaS • Banking app' },
@@ -10,7 +10,19 @@ const experience = [
   { period: '2019 - 2020', company: 'Tradesoft company', role: 'Web Designer', focus: 'Web and interface design' },
 ];
 
+const uxUiExperience = [
+  {
+    period: 'Jan 2022 - Now',
+    company: 'Zhelezno',
+    role: 'UX/UI Designer',
+    focus: 'Research • Complex workflows • Mobile products • B2B SaaS • Admin tools • Design systems',
+  },
+  ...productExperience.slice(2),
+];
+
 export default function About() {
+  const experience = portfolioVariant === 'ux-ui' ? uxUiExperience : productExperience;
+
   return (
     <main data-typography="prose" className="w-full bg-[#181818]">
       <div className="mx-auto w-full max-w-[1280px] px-[clamp(24px,6.25vw,80px)] pb-[clamp(104px,11vw,144px)] pt-[clamp(150px,15vw,192px)]">
@@ -22,7 +34,9 @@ export default function About() {
       >
         <div>
           <h1 className="text-[36px] font-normal leading-[1.15] tracking-[-0.035em] text-white">Kate Mel</h1>
-          <p className="mt-1 text-[20px] font-light italic leading-[1.35] text-white/65">{portfolioContent.specialty}</p>
+          <p className={`mt-1 text-[20px] font-light leading-[1.35] text-white/65 ${portfolioVariant === 'product' ? 'italic' : ''}`}>
+            {portfolioContent.specialty}
+          </p>
 
           <div className="mt-5 space-y-6 text-[20px] font-light leading-[1.55] text-white/80">
             {portfolioContent.about.map((paragraph) => (
