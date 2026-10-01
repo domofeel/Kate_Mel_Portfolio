@@ -33,7 +33,7 @@ export default function About() {
         className="grid grid-cols-1 items-start gap-12 border-t border-white/35 pt-[42px] lg:grid-cols-[minmax(320px,412px)_minmax(0,1fr)] lg:gap-[clamp(48px,5vw,72px)]"
       >
         <div>
-          <h1 className="text-[36px] font-normal leading-[1.15] tracking-[-0.035em] text-white">Kate Mel</h1>
+          <h1 className="text-[36px] font-normal leading-[1.25] tracking-[-0.035em] text-white">Kate Mel</h1>
           <p className={`mt-1 text-[20px] font-light leading-[1.35] text-white/65 ${portfolioVariant === 'product' ? 'italic' : ''}`}>
             {portfolioContent.specialty}
           </p>
