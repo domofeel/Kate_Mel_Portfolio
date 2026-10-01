@@ -11,7 +11,7 @@ const portfolios: Record<PortfolioVariant, PortfolioContent> = {
   product: {
     homeTitle: ['Product', 'Designer'],
     homeDescription:
-      'Product designer focused on B2B SaaS, complex admin tools and mobile products. I use research and usability testing to understand user needs, simplify workflows and guide product decisions, taking features from discovery through design and delivery.',
+      'Product designer focused on B2B SaaS, complex admin tools and mobile products. I use research and usability testing to understand user needs, simplify workflows and guide product decisions, taking features from discovery through design and delivery',
     specialty: 'Product Designer',
     about: [
       'I\u2019m a Product Designer based in Novi Sad, Serbia, with a residence permit and the right to work. I design B2B SaaS platforms, admin tools and mobile products across banking, marketplaces and smart-home services.',
@@ -22,7 +22,7 @@ const portfolios: Record<PortfolioVariant, PortfolioContent> = {
   'ux-ui': {
     homeTitle: ['UX/UI', 'Designer'],
     homeDescription:
-      'UX/UI designer creating clear, intuitive interfaces for web and mobile products. I combine research, interaction design, prototyping and design systems to make complex interfaces easier to understand and use. I\u2019m currently developing a specialization in game UX/UI.',
+      'UX/UI designer creating clear, intuitive interfaces for web and mobile products. I combine research, interaction design, prototyping and design systems to make complex interfaces easier to understand and use. I\u2019m currently developing a specialization in game UX/UI',
     specialty: 'UX/UI Designer',
     about: [
       'I\u2019m a UX/UI Designer based in Novi Sad, Serbia, with a residence permit and the right to work. I design web and mobile interfaces for banking, marketplaces, smart-home services and complex admin tools.',
