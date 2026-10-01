@@ -182,6 +182,23 @@ def add_education(doc):
     set_font(p.add_run("Baltic International Academy, Riga | Master's degree, Marketing in Leisure Industry"), 9.7)
 
 
+def apply_document_font(doc, font_name):
+    for style in doc.styles:
+        if hasattr(style, "font"):
+            style.font.name = font_name
+            properties = style._element.get_or_add_rPr()
+            fonts = properties.find(qn("w:rFonts"))
+            if fonts is None:
+                fonts = OxmlElement("w:rFonts")
+                properties.insert(0, fonts)
+            fonts.set(qn("w:ascii"), font_name)
+            fonts.set(qn("w:hAnsi"), font_name)
+
+    for fonts in doc.element.body.iter(qn("w:rFonts")):
+        fonts.set(qn("w:ascii"), font_name)
+        fonts.set(qn("w:hAnsi"), font_name)
+
+
 def add_product_experience(doc):
     add_section(doc, "Experience")
     add_role(doc, "Senior Product Designer", "Zhelezno", "Jul 2024 - Present", [
@@ -263,12 +280,13 @@ def build_ux_ui_resume():
     configure_document(doc)
     add_header(doc, "UX/UI Designer", "https://kate-mel-portfolio-ux-ui.vercel.app/")
     add_ux_ui_experience(doc)
+    add_education(doc)
     add_section(
         doc,
         "Skills",
         "UX Design, UI Design, Interaction Design, Information Architecture, User Flows, Wireframing, Interactive Prototyping, User Research, User Interviews, Usability Testing, Responsive Design, Accessibility, Design Systems, Component Libraries, Design Tokens, Developer Handoff, Figma, FigJam, ProtoPie, Adobe Photoshop, Adobe Illustrator, ChatGPT, Claude, Codex.",
     )
-    add_education(doc)
+    apply_document_font(doc, "Arial")
     path = OUTPUT / "Ekaterina_Melnikova_UXUI_Designer.docx"
     doc.save(path)
     return path
