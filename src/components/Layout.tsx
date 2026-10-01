@@ -3,9 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, Copy, Info, Menu, X } from 'lucide-react';
 import { projects } from '../data/projects';
+import { portfolioVariant } from '../config/portfolio';
 
 const EMAIL = 'domofeel@gmail.com';
 const EMAIL_COPIED_EVENT = 'portfolio:email-copied';
+const CV_FILE = portfolioVariant === 'ux-ui'
+  ? 'Ekaterina_Melnikova_UXUI_Designer.pdf'
+  : 'Ekaterina_Melnikova_Product_Designer.pdf';
+const CV_HREF = `./${CV_FILE}`;
 
 const copyEmail = async () => {
   try {
@@ -201,8 +206,8 @@ export const Navbar = () => {
               Telegram
             </a>
             <a
-              href="./CV_Ekaterina_Melnikova.pdf"
-              download="CV_Ekaterina_Melnikova.pdf"
+              href={CV_HREF}
+              download={CV_FILE}
               className="min-w-[116px] px-6 py-2.5 bg-transparent border border-[#A3E635] text-[#A3E635] font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all cursor-pointer uppercase group/cv"
               style={{
                 borderRadius: "var(--header-cv-radius, 8px)",
@@ -273,8 +278,8 @@ export const Navbar = () => {
                 </a>
               </div>
               <a
-                href="./CV_Ekaterina_Melnikova.pdf"
-                download="CV_Ekaterina_Melnikova.pdf"
+                href={CV_HREF}
+                download={CV_FILE}
                 className="px-6 py-4 bg-transparent border border-[#A3E635] text-[#A3E635] font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all uppercase mt-4 w-full"
                 style={{
                   borderRadius: "var(--case-button-radius, 0px)",
@@ -302,7 +307,7 @@ export const Footer = () => {
         <EmailLink className="cursor-pointer transition-colors hover:text-brand-accent" />
         <a href="https://www.linkedin.com/in/kate-mel-71645a23a/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors">LinkedIn</a>
         <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors">Telegram</a>
-        <a href="./CV_Ekaterina_Melnikova.pdf" download="CV_Ekaterina_Melnikova.pdf" className="hover:text-brand-accent transition-colors">CV</a>
+        <a href={CV_HREF} download={CV_FILE} className="hover:text-brand-accent transition-colors">CV</a>
       </div>
       <p className="mt-20 text-brand-muted text-sm">© 2026 Kate Mel</p>
     </footer>

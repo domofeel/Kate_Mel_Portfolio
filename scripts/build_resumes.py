@@ -131,7 +131,7 @@ def configure_document(doc):
     bullet.paragraph_format.line_spacing = 1.02
 
 
-def add_header(doc, title):
+def add_header(doc, title, portfolio_url):
     p = doc.add_paragraph(style="Title")
     p.add_run("Ekaterina Melnikova")
 
@@ -146,7 +146,7 @@ def add_header(doc, title):
     set_font(p.add_run(" | "), 9.5, color=MUTED)
     add_hyperlink(p, "LinkedIn", "https://www.linkedin.com/in/kate-mel-71645a23a/")
     set_font(p.add_run(" | "), 9.5, color=MUTED)
-    add_hyperlink(p, "Portfolio", "https://kate-mel-portfolio.vercel.app/")
+    add_hyperlink(p, "Portfolio", portfolio_url)
 
 
 def add_section(doc, heading, body=None):
@@ -210,56 +210,78 @@ def add_product_experience(doc):
     ])
 
 
+def add_ux_ui_experience(doc):
+    add_section(doc, "Experience")
+    add_role(doc, "Senior Product Designer", "Zhelezno", "Jul 2024 - Present", [
+        "Designed complex B2B dashboards and internal tools, turning dense workflows into clear, scalable interfaces.",
+        "Built and maintained web and mobile design-system components, UX patterns and developer documentation, increasing development speed by 50%.",
+        "Worked with Product and Engineering from interaction concepts and prototypes through handoff and QA, reducing feature rework by 23%.",
+        "Mentored a junior designer and improved feature delivery time by 14%.",
+    ])
+    add_role(doc, "Middle+ Product Designer", "Zhelezno", "Jan 2022 - Jul 2024", [
+        "Redesigned B2B admin dashboards and navigation, increasing daily user adoption by 40%.",
+        "Used interviews, surveys and usability testing to refine flows and UI, increasing B2B retention by 42% within 13 months.",
+        "Designed an employee mobile app used daily by 65% of staff, accelerating task completion by 27%.",
+    ])
+    add_role(doc, "UX/UI Designer", "ServiceHub", "Aug 2021 - Dec 2021", [
+        "Improved a fintech SaaS platform through usability testing and iterative interface design, increasing employee workflow efficiency by 9%.",
+        "Designed a fast-loan banking app from user flows to polished UI, leading to 30 loan completions within two weeks of launch.",
+        "Created branding and a landing page for an IT industry festival, generating 37+ qualified leads.",
+    ])
+    add_role(doc, "UX/UI Designer", "Apple Concierge", "Oct 2020 - Dec 2021", [
+        "Designed B2B delivery and food-service mobile apps adopted by Gazprombank, Sberbank and Alfa-Bank, increasing service value by 23%.",
+        "Redesigned KPI dashboards and metric-tracking flows, reducing manager workflow time by 12%.",
+        "Took work from experiments and wireframes to polished UI and interactive prototypes, improving mobile app user flows by 19%.",
+    ])
+    add_role(doc, "Web Designer", "CTC Media", "May 2020 - Sep 2020", [
+        "Redesigned key B2C and B2B marketplace flows, supporting adoption among 4K+ active users.",
+    ])
+
+
 def build_product_resume():
     doc = Document()
     configure_document(doc)
-    add_header(doc, "Product / UX/UI Designer")
+    add_header(doc, "Product Designer", "https://kate-mel-portfolio-product.vercel.app/")
     add_section(
         doc,
         "Profile",
-        "Product / UX/UI Designer with experience across B2B SaaS, complex admin tools and mobile products. I work from research and information architecture through prototyping, usability testing, polished UI and developer handoff. My work includes products for Zhelezno, ServiceHub, Apple Concierge and CTC Media, plus services adopted by Gazprombank, Sberbank and Alfa-Bank.",
+        "Product Designer focused on B2B SaaS, complex admin tools and mobile products. I connect user research, usability testing and product data with clear workflows and scalable interface solutions, taking features from discovery through design, delivery and iteration.",
     )
     add_section(doc, "Core Skills")
     add_skills(doc, [
-        ("Product and research", "product discovery, user interviews, surveys, usability testing, insight synthesis, metrics and KPIs, prioritization"),
-        ("UX and UI", "information architecture, complex workflows, user flows, wireframes, prototyping, mobile UI, accessibility"),
-        ("Systems and delivery", "design systems, component libraries, design tokens, Figma, developer handoff, documentation, cross-functional collaboration"),
+        ("Product", "discovery-to-delivery, product strategy, prioritization, metrics and KPIs, roadmap alignment"),
+        ("Research and UX", "user interviews, surveys, usability testing, insight synthesis, information architecture, complex workflows"),
+        ("Design and delivery", "user flows, wireframes, prototyping, mobile UI, design systems, Figma, developer handoff, documentation"),
     ])
     add_product_experience(doc)
     add_education(doc)
-    path = OUTPUT / "Ekaterina_Melnikova_Product_UXUI_Designer.docx"
+    path = OUTPUT / "Ekaterina_Melnikova_Product_Designer.docx"
     doc.save(path)
     return path
 
 
-def build_game_resume():
+def build_ux_ui_resume():
     doc = Document()
     configure_document(doc)
-    add_header(doc, "UX/UI Designer | Game UX/UI")
+    add_header(doc, "UX/UI Designer", "https://kate-mel-portfolio-ux-ui.vercel.app/")
     add_section(
         doc,
         "Profile",
-        "Product and UX/UI Designer developing a specialization in game UX/UI. I bring experience in mobile products, complex systems, user research, usability testing, prototyping and design systems. I am open to middle game UX/UI roles and currently focus on mobile and casual game experiences.",
+        "UX/UI Designer creating clear, intuitive interfaces for web and mobile products. I combine research, information architecture, interaction design, prototyping and design systems to simplify complex products. I am currently developing a specialization in game UX/UI.",
     )
-    add_section(doc, "Selected Game Project")
-    add_role(doc, "Golf Rival UX/UI Design Task", "Nordeus hiring exercise", "2026", [
-        "Analyzed a 30-second gameplay decision flow through heuristic review and identified interface opportunities around equipment choice.",
-        "Created UX and UI concepts for club and ball selection, including recommendations, filters, tags and saved preferences.",
-        "Presented the process from analysis through interface concepts and explained the design rationale.",
-    ])
-    add_section(doc, "Transferable Skills")
+    add_section(doc, "Core Skills")
     add_skills(doc, [
-        ("Game UX/UI focus", "mobile and casual game UX, interaction design, player flows, information hierarchy, interface concepts"),
-        ("Research and design", "heuristic analysis, user interviews, usability testing, user flows, wireframes, prototyping, polished UI"),
-        ("Systems and delivery", "design systems, Figma, interactive prototypes, developer handoff, documentation, stakeholder presentations"),
+        ("UX", "user interviews, surveys, usability testing, heuristic analysis, information architecture, user flows, wireframes"),
+        ("UI and interaction", "visual hierarchy, interaction design, responsive web and mobile UI, polished mockups, interactive prototypes"),
+        ("Systems and delivery", "design systems, component libraries, design tokens, Figma, developer handoff, documentation, QA"),
     ])
-    add_product_experience(doc)
+    add_ux_ui_experience(doc)
     add_education(doc)
-    path = OUTPUT / "Ekaterina_Melnikova_Game_UXUI_Designer.docx"
+    path = OUTPUT / "Ekaterina_Melnikova_UXUI_Designer.docx"
     doc.save(path)
     return path
 
 
 if __name__ == "__main__":
     print(build_product_resume())
-    print(build_game_resume())
+    print(build_ux_ui_resume())
