@@ -1,13 +1,21 @@
 import { motion } from 'motion/react';
 import { portfolioContent, portfolioVariant } from '../config/portfolio';
 
-const productExperience = [
-  { period: 'Jul 2024 - Present', company: 'Zhelezno', role: 'Senior Product Designer', focus: 'B2B SaaS • Admin tools • Design systems' },
-  { period: 'Jan 2022 - Jul 2024', company: 'Zhelezno', role: 'Middle+ Product Designer', focus: 'Research • Complex workflows • Mobile products' },
+const remainingExperience = [
   { period: 'Aug 2021 - Dec 2021', company: 'ServiceHub', role: 'UX/UI Designer', focus: 'Fintech SaaS • Banking app' },
   { period: 'Oct 2020 - Dec 2021', company: 'Apple Concierge', role: 'UX/UI Designer', focus: 'B2B and B2C mobile products' },
   { period: 'May 2020 - Sep 2020', company: 'CTC Media', role: 'Web Designer', focus: 'Marketplace UX/UI' },
   { period: '2019 - 2020', company: 'Tradesoft company', role: 'Web Designer', focus: 'Web and interface design' },
+];
+
+const productExperience = [
+  {
+    period: 'Jan 2022 - Now',
+    company: 'Zhelezno',
+    role: 'Product Designer',
+    focus: 'Research • Complex workflows • Mobile products • B2B SaaS • Admin tools • Design systems',
+  },
+  ...remainingExperience,
 ];
 
 const uxUiExperience = [
@@ -17,7 +25,7 @@ const uxUiExperience = [
     role: 'UX/UI Designer',
     focus: 'Research • Complex workflows • Mobile products • B2B SaaS • Admin tools • Design systems',
   },
-  ...productExperience.slice(2),
+  ...remainingExperience,
 ];
 
 export default function About() {
