@@ -298,7 +298,7 @@ export const Footer = () => {
   return (
     <footer className="flex flex-col items-center border-t border-white/5 bg-[#181818] px-[clamp(24px,6.25vw,128px)] py-20">
       <h2 className="title-text text-center mb-12">Let's connect.</h2>
-      <div className="flex gap-12 text-lg">
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-lg">
         <EmailLink className="cursor-pointer transition-colors hover:text-brand-accent" />
         <a href="https://www.linkedin.com/in/kate-mel-71645a23a/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors">LinkedIn</a>
         <a href="https://t.me/domofeel" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors">Telegram</a>

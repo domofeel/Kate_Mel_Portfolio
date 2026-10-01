@@ -19,9 +19,9 @@ export default function Home() {
             designer
           </h1>
           <p className="max-w-[53rem] text-xl md:text-2xl text-[#a3a3a3] font-light leading-[1.5]">
-            Product designer with 5+ years of experience designing B2B SaaS<span className="hidden lg:inline"><br /></span>{' '}
-            and B2C apps for companies including Gazprombank and Sber. Turn<span className="hidden lg:inline"><br /></span>{' '}
-            user research into data-driven solutions, focusing on user-centered design.
+            Product / UX/UI designer focused on B2B SaaS, complex admin tools<span className="hidden lg:inline"><br /></span>{' '}
+            and mobile products. I use research, usability testing and design systems<span className="hidden lg:inline"><br /></span>{' '}
+            to make demanding workflows clear, and I am developing a specialization in game UX/UI.
           </p>
         </motion.div>
       </header>

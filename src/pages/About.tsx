@@ -1,11 +1,12 @@
 import { motion } from 'motion/react';
 
 const experience = [
-  { period: '2022 — 2023', company: 'Zhelezno', role: 'Product designer', focus: 'Product design • Testings • Custdev' },
-  { period: '2021 — 2021', company: 'ServiceHub', role: 'UX/UI designer', focus: 'UX/UI • Graphic design' },
-  { period: '2020 — 2021', company: 'Apple Concierge', role: 'UX/UI designer', focus: 'Product design • Testings • Custdev' },
-  { period: '2020 — 2020', company: 'CTC Media', role: 'Web designer', focus: 'Product design • Testings • Custdev' },
-  { period: '2019 — 2020', company: 'Tradesoft company', role: 'Web designer', focus: 'Product design • Testings • Custdev' },
+  { period: 'Jul 2024 - Present', company: 'Zhelezno', role: 'Senior Product Designer', focus: 'B2B SaaS • Admin tools • Design systems' },
+  { period: 'Jan 2022 - Jul 2024', company: 'Zhelezno', role: 'Middle+ Product Designer', focus: 'Research • Complex workflows • Mobile products' },
+  { period: 'Aug 2021 - Dec 2021', company: 'ServiceHub', role: 'UX/UI Designer', focus: 'Fintech SaaS • Banking app' },
+  { period: 'Oct 2020 - Dec 2021', company: 'Apple Concierge', role: 'UX/UI Designer', focus: 'B2B and B2C mobile products' },
+  { period: 'May 2020 - Sep 2020', company: 'CTC Media', role: 'Web Designer', focus: 'Marketplace UX/UI' },
+  { period: '2019 - 2020', company: 'Tradesoft company', role: 'Web Designer', focus: 'Web and interface design' },
 ];
 
 export default function About() {
@@ -20,18 +21,17 @@ export default function About() {
       >
         <div>
           <h1 className="text-[36px] font-normal leading-[1.15] tracking-[-0.035em] text-white">Kate Mel</h1>
-          <p className="mt-1 text-[20px] font-light italic leading-[1.35] text-white/65">Product and UX designer</p>
+          <p className="mt-1 text-[20px] font-light italic leading-[1.35] text-white/65">Product / UX/UI Designer</p>
 
           <div className="mt-5 space-y-6 text-[20px] font-light leading-[1.55] text-white/80">
             <p>
-              Product designer with over 5 years of experience. I specialize in creating complex interfaces.
-              Worked with banking services, marketplace systems and complex products for management companies.
+              I&apos;m a Product / UX/UI Designer based in Novi Sad, Serbia, with a residence permit and the right
+              to work. I design B2B SaaS, admin tools and mobile products for banking, marketplace and smart-home services.
             </p>
             <p>
-              I&apos;m aiming to balance user convenience with development constraints. My experience includes
-              creating interfaces for dispatching systems, smart device scenarios, camera archive viewing and ex.
-              I apply usability testing, storyboarding, customer journey maps (CJMs), service blueprints, and other
-              techniques to make interfaces clear and simple.
+              I work from research and UX structure through interface design, prototyping, testing and developer handoff.
+              My practice includes design systems, user interviews, usability testing, customer journey maps and service
+              blueprints. I am expanding this product design background into game UX/UI, with a focus on mobile and casual experiences.
             </p>
           </div>
         </div>
