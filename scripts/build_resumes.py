@@ -199,6 +199,49 @@ def apply_document_font(doc, font_name):
         fonts.set(qn("w:hAnsi"), font_name)
 
 
+def improve_ux_ui_readability(doc):
+    normal = doc.styles["Normal"]
+    normal.font.size = Pt(10.4)
+    normal.paragraph_format.space_after = Pt(3)
+    normal.paragraph_format.line_spacing = 1.06
+
+    title = doc.styles["Title"]
+    title.font.size = Pt(27)
+    title.paragraph_format.space_after = Pt(3)
+
+    heading = doc.styles["Heading 1"]
+    heading.font.size = Pt(12.2)
+    heading.paragraph_format.space_before = Pt(9)
+    heading.paragraph_format.space_after = Pt(4)
+
+    role = doc.styles["Role"]
+    role.font.size = Pt(10.6)
+    role.paragraph_format.space_before = Pt(6.5)
+    role.paragraph_format.space_after = Pt(1.5)
+
+    bullet = doc.styles["List Bullet"]
+    bullet.font.size = Pt(10.2)
+    bullet.paragraph_format.space_after = Pt(2.2)
+    bullet.paragraph_format.line_spacing = 1.04
+
+    for index, paragraph in enumerate(doc.paragraphs):
+        style_name = paragraph.style.name
+        if style_name == "Role":
+            for run_index, run in enumerate(paragraph.runs):
+                run.font.size = Pt(10.6 if run_index == 0 else 10)
+        elif style_name == "List Bullet":
+            for run in paragraph.runs:
+                run.font.size = Pt(10.2)
+        elif style_name == "Normal":
+            size = 13 if index == 1 else 10.2 if index == 2 else 10.4
+            for run in paragraph.runs:
+                run.font.size = Pt(size)
+
+    contact = doc.paragraphs[2]
+    for size_element in contact._p.iter(qn("w:sz")):
+        size_element.set(qn("w:val"), "20")
+
+
 def add_product_experience(doc):
     add_section(doc, "Experience")
     add_role(doc, "Senior Product Designer", "Zhelezno", "Jul 2024 - Present", [
@@ -287,6 +330,7 @@ def build_ux_ui_resume():
         "UX Design, UI Design, Interaction Design, Information Architecture, User Flows, Wireframing, Interactive Prototyping, User Research, User Interviews, Usability Testing, Responsive Design, Accessibility, Design Systems, Component Libraries, Design Tokens, Developer Handoff, Figma, FigJam, ProtoPie, Adobe Photoshop, Adobe Illustrator, ChatGPT, Claude, Codex.",
     )
     apply_document_font(doc, "Arial")
+    improve_ux_ui_readability(doc)
     path = OUTPUT / "Ekaterina_Melnikova_UXUI_Designer.docx"
     doc.save(path)
     return path
