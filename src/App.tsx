@@ -2,6 +2,7 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import { useEffect } from 'react';
 import { Navbar, Footer } from './components/Layout';
 import NonBreakingProse from './components/NonBreakingProse';
+import { portfolioContent } from './config/portfolio';
 import Home from './pages/Home';
 import About from './pages/About';
 import CaseStudy from './pages/CaseStudy';
@@ -15,6 +16,10 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  useEffect(() => {
+    document.title = `Kate Mel | ${portfolioContent.specialty}`;
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
