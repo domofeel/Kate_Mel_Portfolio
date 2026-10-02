@@ -149,6 +149,15 @@ def add_header(doc, title, portfolio_url):
     add_hyperlink(p, "Portfolio", portfolio_url)
 
 
+def add_positioning(doc, text):
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(0)
+    p.paragraph_format.space_after = Pt(0)
+    p.paragraph_format.line_spacing = 1.08
+    p.paragraph_format.keep_with_next = True
+    set_font(p.add_run(text), 10.4)
+
+
 def add_section(doc, heading, body=None):
     doc.add_paragraph(heading, style="Heading 1")
     if body:
@@ -298,6 +307,12 @@ def build_product_resume():
     doc = Document()
     configure_document(doc)
     add_header(doc, "Product Designer", "https://kate-mel-portfolio-product.vercel.app/")
+    add_positioning(
+        doc,
+        "Product Designer focused on B2B SaaS, complex admin tools and mobile products. "
+        "I turn user research and business goals into clear workflows, validate solutions "
+        "through usability testing, and work with product and engineering teams from discovery to delivery.",
+    )
     add_product_experience(doc)
     add_education(doc)
     add_section(
@@ -316,6 +331,12 @@ def build_ux_ui_resume():
     doc = Document()
     configure_document(doc)
     add_header(doc, "UX/UI Designer", "https://kate-mel-portfolio-ux-ui.vercel.app/")
+    add_positioning(
+        doc,
+        "UX/UI Designer creating clear web and mobile interfaces through research, interaction design, "
+        "prototyping and usability testing. I build scalable design systems and work closely with "
+        "developers through handoff and implementation. Currently developing a specialization in game UX/UI.",
+    )
     add_ux_ui_experience(doc)
     add_education(doc)
     add_section(
