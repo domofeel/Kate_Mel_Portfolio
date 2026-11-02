@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main data-typography="prose" className="mx-auto max-w-[2048px] bg-[#181818] px-[clamp(24px,6.25vw,128px)] pt-[clamp(120px,9vw,180px)]">
-      <header className={portfolioVariant === 'ux-ui' ? 'mb-[clamp(80px,8vw,128px)]' : 'mb-[clamp(88px,8vw,160px)]'}>
+      <header className={portfolioVariant === 'ux-ui' ? 'mb-[clamp(104px,10vw,160px)]' : 'mb-[clamp(88px,8vw,160px)]'}>
         <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
