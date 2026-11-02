@@ -16,7 +16,7 @@ export default function Home() {
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.8 }}
         >
-          <h1 className="text-[min(6rem,21vw)] md:text-[9rem] lg:text-[12rem] xl:text-[13rem] leading-[1em] font-sans font-normal tracking-[-0.04em] text-white mb-[60px]">
+          <h1 className={`text-[min(6rem,21vw)] md:text-[9rem] lg:text-[12rem] xl:text-[13rem] font-sans font-normal tracking-[-0.04em] text-white ${portfolioVariant === 'ux-ui' ? 'leading-[0.9em] mb-8 md:mb-10' : 'leading-[1em] mb-[60px]'}`}>
             {portfolioContent.homeTitle[0]} <br />
             {portfolioContent.homeTitle[1]}
           </h1>
@@ -26,7 +26,7 @@ export default function Home() {
         </motion.div>
 
       {portfolioVariant === 'ux-ui' && (
-        <aside aria-labelledby="personal-project-title" className="mt-[clamp(32px,3vw,48px)]">
+        <aside aria-labelledby="personal-project-title" className="mt-14 md:mt-[72px]">
           <a
             href="https://www.figma.com/design/N3g9FCQeOvLmDESm2wxlmh/Wargaming_Melnikova_Ekaterina?node-id=64-828"
             target="_blank"
