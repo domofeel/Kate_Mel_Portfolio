@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main data-typography="prose" className="mx-auto max-w-[2048px] bg-[#181818] px-[clamp(24px,6.25vw,128px)] pt-[clamp(120px,9vw,180px)]">
-      <header className="mb-[clamp(88px,8vw,160px)]">
+      <header className={portfolioVariant === 'ux-ui' ? 'mb-[clamp(80px,8vw,128px)]' : 'mb-[clamp(88px,8vw,160px)]'}>
         <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
@@ -24,10 +24,9 @@ export default function Home() {
             {portfolioContent.homeDescription}
           </p>
         </motion.div>
-      </header>
 
       {portfolioVariant === 'ux-ui' && (
-        <aside aria-labelledby="personal-project-title" className="mb-[clamp(64px,6vw,112px)]">
+        <aside aria-labelledby="personal-project-title" className="mt-[clamp(32px,3vw,48px)]">
           <a
             href="https://www.figma.com/design/N3g9FCQeOvLmDESm2wxlmh/Wargaming_Melnikova_Ekaterina?node-id=64-828"
             target="_blank"
@@ -47,6 +46,7 @@ export default function Home() {
           </a>
         </aside>
       )}
+      </header>
 
       <section className="flex flex-col gap-[clamp(92px,7vw,148px)] mb-40">
         {/* Project 1 - Full Width */}
