@@ -34,7 +34,6 @@ export default function Home() {
             className="group flex flex-col gap-7 border border-white/15 bg-white/[0.03] p-6 transition-colors hover:border-[#A3E635]/50 hover:bg-white/[0.05] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A3E635] md:flex-row md:items-center md:justify-between md:gap-12 md:p-10"
           >
             <div className="max-w-[48rem]">
-              <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.12em] text-[#A3E635]">Personal project · Game UX/UI</p>
               <h2 id="personal-project-title" className="mb-3 text-[26px] font-normal leading-[1.3] tracking-[-0.02em] text-white md:text-[32px]">World of Warships — UX/UI concept</h2>
               <p className="text-[18px] font-light leading-[1.5] text-[#a3a3a3]">Ship comparison and player tooltip concept: benchmarking, user flows, wireframes and high-fidelity UI for a data-rich game interface.</p>
             </div>
