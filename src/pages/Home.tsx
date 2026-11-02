@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { portfolioContent } from '../config/portfolio';
+import { ArrowUpRight } from 'lucide-react';
+import { portfolioContent, portfolioVariant } from '../config/portfolio';
 import { projects } from '../data/projects';
 
 export default function Home() {
@@ -24,6 +25,28 @@ export default function Home() {
           </p>
         </motion.div>
       </header>
+
+      {portfolioVariant === 'ux-ui' && (
+        <aside aria-labelledby="personal-project-title" className="mb-[clamp(64px,6vw,112px)]">
+          <a
+            href="https://www.figma.com/design/N3g9FCQeOvLmDESm2wxlmh/Wargaming_Melnikova_Ekaterina?node-id=64-828"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col gap-7 border border-white/15 bg-white/[0.03] p-6 transition-colors hover:border-[#A3E635]/50 hover:bg-white/[0.05] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A3E635] md:flex-row md:items-center md:justify-between md:gap-12 md:p-10"
+          >
+            <div className="max-w-[48rem]">
+              <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.12em] text-[#A3E635]">Personal project · Game UX/UI</p>
+              <h2 id="personal-project-title" className="mb-3 text-[26px] font-normal leading-[1.3] tracking-[-0.02em] text-white md:text-[32px]">World of Warships — UX/UI concept</h2>
+              <p className="text-[18px] font-light leading-[1.5] text-[#a3a3a3]">Ship comparison and player tooltip concept: benchmarking, user flows, wireframes and high-fidelity UI for a data-rich game interface.</p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-3 self-start border-b border-white/35 pb-2 text-[16px] text-white transition-colors group-hover:border-[#A3E635] group-hover:text-[#A3E635] md:self-center">
+              View in Figma
+              <ArrowUpRight size={20} aria-hidden="true" />
+              <span className="sr-only"> (opens in a new tab)</span>
+            </span>
+          </a>
+        </aside>
+      )}
 
       <section className="flex flex-col gap-[clamp(92px,7vw,148px)] mb-40">
         {/* Project 1 - Full Width */}
