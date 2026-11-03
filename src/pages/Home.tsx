@@ -26,7 +26,7 @@ export default function Home() {
         </motion.div>
 
       {portfolioVariant === 'ux-ui' && (
-        <aside aria-labelledby="personal-project-title" className="mt-16 md:mt-20">
+        <aside aria-labelledby="personal-project-title" className="mt-[70px]">
           <a
             href="https://www.figma.com/design/N3g9FCQeOvLmDESm2wxlmh/Wargaming_Melnikova_Ekaterina?node-id=64-828"
             target="_blank"
