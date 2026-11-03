@@ -31,7 +31,7 @@ export default function Home() {
             href="https://www.figma.com/design/N3g9FCQeOvLmDESm2wxlmh/Wargaming_Melnikova_Ekaterina?node-id=64-828"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col gap-7 rounded-[16px] border border-white/15 bg-white/[0.03] p-8 transition-colors duration-500 ease-out motion-reduce:transition-none hover:border-[#A3E635]/50 hover:bg-white/[0.05] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A3E635] md:flex-row md:items-center md:justify-between md:gap-12 md:rounded-[24px] md:p-14"
+            className="group flex flex-col gap-7 border border-white/15 bg-white/[0.03] px-8 py-12 transition-colors duration-500 ease-out motion-reduce:transition-none hover:bg-white/[0.05] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A3E635] md:flex-row md:items-center md:justify-between md:gap-12 md:px-14 md:py-20"
           >
             <div className="max-w-[48rem]">
               <h2 id="personal-project-title" className="mb-3 text-[26px] font-normal leading-[1.3] tracking-[-0.02em] text-white md:text-[32px]">World of Warships — UX/UI concept</h2>
