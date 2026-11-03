@@ -31,13 +31,13 @@ export default function Home() {
             href="https://www.figma.com/design/N3g9FCQeOvLmDESm2wxlmh/Wargaming_Melnikova_Ekaterina?node-id=64-828"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col gap-7 border border-white/15 bg-white/[0.03] p-6 transition-colors hover:border-[#A3E635]/50 hover:bg-white/[0.05] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A3E635] md:flex-row md:items-center md:justify-between md:gap-12 md:p-10"
+            className="group flex flex-col gap-7 border border-white/15 bg-white/[0.03] p-8 transition-colors duration-500 ease-out motion-reduce:transition-none hover:border-[#A3E635]/50 hover:bg-white/[0.05] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A3E635] md:flex-row md:items-center md:justify-between md:gap-12 md:p-14"
           >
             <div className="max-w-[48rem]">
               <h2 id="personal-project-title" className="mb-3 text-[26px] font-normal leading-[1.3] tracking-[-0.02em] text-white md:text-[32px]">World of Warships — UX/UI concept</h2>
               <p className="text-[18px] font-light leading-[1.5] text-[#a3a3a3]">Ship comparison and player tooltip concept: benchmarking, user flows, wireframes and high-fidelity UI for a data-rich game interface.</p>
             </div>
-            <span className="inline-flex shrink-0 items-center gap-3 self-start border-b border-white/35 pb-2 text-[16px] text-white transition-colors group-hover:border-[#A3E635] group-hover:text-[#A3E635] md:self-center">
+            <span className="inline-flex shrink-0 items-center gap-3 self-start border-b border-white/35 pb-2 text-[16px] text-white transition-colors duration-500 ease-out motion-reduce:transition-none group-hover:border-[#A3E635] group-hover:text-[#A3E635] md:self-center">
               View in Figma
               <ArrowUpRight size={20} aria-hidden="true" />
               <span className="sr-only"> (opens in a new tab)</span>
